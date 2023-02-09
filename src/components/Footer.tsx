@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
 						id='email'
 					/>
 					<RiSendPlaneFill
-						className='absolute top-[50%] right-8 translate-y-[-50%]'
+						className='absolute top-[50%] right-8 translate-y-[-50%] cursor-pointer'
 						fill='#fff'
 					/>
 				</label>
@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
 				</div>
 			</div>
 
-			<div className='flex flex-row'>
+			<div className='flex flex-row items-center gap-x-20'>
 				<div className='flex flex-col gap-y-6'>
 					<img className='w-36 h-10' src={FooterLogo} alt='header-logo' />
 					<p className='text-sm font-normal text-[#1B5A7D]'>
@@ -40,9 +40,76 @@ const Footer: React.FC = () => {
 					</p>
 					<hr />
 					<div className='flex flex-row gap-x-9'>
-						<BsGoogle />
-						<BsInstagram />
-						<BsWhatsapp />
+						<BsGoogle fontSize={24} />
+						<BsInstagram fontSize={24} />
+						<BsWhatsapp fontSize={24} />
+					</div>
+				</div>
+
+				<div className='grid grid-cols-3 w-full justify-items-center'>
+					<div>
+						<h1 className='text-[#1B5A7D] font-semibold text-lg mb-3'>
+							Find product
+						</h1>
+						<ul className='list-disc marker:text-[#D9D9D9]'>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>
+								Brownze arnold
+							</li>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>
+								Chronograph blue
+							</li>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>
+								Smart phones
+							</li>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>
+								Automatic watch
+							</li>
+							<li className='text-[#1B5A7D] font-normal text-lg'>
+								Hair straighteners
+							</li>
+						</ul>
+					</div>
+
+					<div>
+						<h1 className='text-[#1B5A7D] font-semibold text-lg mb-3'>
+							Get help
+						</h1>
+						<ul className='list-disc marker:text-[#D9D9D9]'>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>
+								About us
+							</li>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>
+								Contact us
+							</li>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>
+								Return policy
+							</li>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>
+								Privacy policy
+							</li>
+							<li className='text-[#1B5A7D] font-normal text-lg'>
+								Payment policy
+							</li>
+						</ul>
+					</div>
+
+					<div>
+						<h1 className='text-[#1B5A7D] font-semibold text-lg mb-3'>
+							About us
+						</h1>
+						<ul className='list-disc marker:text-[#D9D9D9]'>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>News</li>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>
+								Service
+							</li>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>
+								Our policy
+							</li>
+							<li className='mb-4 text-[#1B5A7D] font-normal text-lg'>
+								Custmer care
+							</li>
+							<li className='text-[#1B5A7D] font-normal text-lg'>Faq’s</li>
+						</ul>
 					</div>
 				</div>
 			</div>
