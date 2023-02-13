@@ -8,3 +8,31 @@
 body {
 	font-family: 'Poppins', sans-serif;
 }
+
+.product:hover .product-card {
+	display: flex;
+}
+
+.product:hover .product-hide {
+	display: none;
+}
+
+.product-card {
+	display: none;
+	align-items: center;
+	column-gap: 15px;
+}
+
+.btn {
+	width: 200px;
+	display: flex;
+	align-items: center;
+	column-gap: 39px;
+	padding: 18px;
+	font-weight: 600;
+	color: #272727;
+	font-size: 15.7366px;
+	line-height: 24px;
+	background: #87bcd9;
+	border-radius: 19.6707px;
+}

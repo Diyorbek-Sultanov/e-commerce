@@ -24,13 +24,13 @@ const sliders: sliderT[] = [
 	},
 
 	{
-		name: 'Laptop',
+		name: 'Desktop & laptop',
 		image: Laptop,
 		count: 6,
 	},
 
 	{
-		name: 'Camera',
+		name: 'DSLR camera',
 		image: Camera,
 		count: 6,
 	},
@@ -42,13 +42,13 @@ const sliders: sliderT[] = [
 	},
 
 	{
-		name: 'Laptop',
+		name: 'Desktop & laptop',
 		image: Laptop,
 		count: 6,
 	},
 
 	{
-		name: 'Camera',
+		name: 'DSLR camera',
 		image: Camera,
 		count: 6,
 	},
@@ -71,9 +71,13 @@ const SliderProduct: React.FC = () => {
 			>
 				{sliders.map((slider, index) => (
 					<SwiperSlide key={index} virtualIndex={index}>
-						<div className='flex flex-row items-center justify-around  border-2 border-black'>
+						<div className='flex flex-row items-center justify-around'>
 							<div className='flex flex-row items-center py-6 px-7 gap-x-10'>
-								<img src={slider?.image} alt={slider?.name} />
+								<img
+									className='h-auto object-cover'
+									src={slider?.image}
+									alt={slider?.name}
+								/>
 								<div>
 									<h5 className='text-[#1B5A7D] font-semibold text-xl mb-2'>
 										{slider?.name}
