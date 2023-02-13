@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
+import { Toaster } from 'react-hot-toast'
 
 import App from './App'
 import { store } from './store/store'
@@ -23,7 +25,9 @@ root.render(
 		<BrowserRouter>
 			<Provider store={store}>
 				<QueryClientProvider client={queryClient}>
+					<Toaster />
 					<App />
+					<ReactQueryDevtools initialIsOpen={false} />
 				</QueryClientProvider>
 			</Provider>
 		</BrowserRouter>
