@@ -3,6 +3,7 @@ import React from 'react'
 import { useProduct } from '../app/hooks'
 
 import Category from '../components/Category'
+import DisCount from '../components/DisCount'
 import Product from '../components/Product'
 import Skeleton from '../components/Skeleton'
 import Slider from '../components/Slider'
@@ -18,7 +19,7 @@ const Home: React.FC = () => {
 			<Slider />
 			<SliderProduct />
 			<Category />
-			<div className='grid grid-cols-4 grid-rows-2 gap-7 justify-items-center items-center'>
+			<div className='grid grid-cols-4 grid-rows-2 gap-7 justify-items-center items-center mb-28'>
 				{isLoading ? (
 					skeleton
 				) : product?.length ? (
@@ -27,6 +28,7 @@ const Home: React.FC = () => {
 					<div>Elements Not Fount</div>
 				)}
 			</div>
+			<DisCount />
 		</div>
 	)
 }

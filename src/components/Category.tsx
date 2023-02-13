@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { useAppSelector, useAppDispatch } from '../app/hooks'
 import { setCategory } from '../store/slice/categorySlice'
 
-const categories = ['All', 'Cameras', 'Laptops', 'Tablets', 'Mouse']
+const categories = ['Cameras', 'Laptops', 'Tablets', 'Mouse']
 
 const Category: React.FC = () => {
 	const { categoryId } = useAppSelector(state => state.category)

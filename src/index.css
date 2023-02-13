@@ -36,3 +36,7 @@ body {
 	background: #87bcd9;
 	border-radius: 19.6707px;
 }
+
+.sale {
+	background-image: url('./assets/bg-sale.jpg');
+}
