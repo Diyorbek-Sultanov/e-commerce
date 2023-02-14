@@ -27,7 +27,7 @@ const Home: React.FC = () => {
 			<Slider />
 			<SliderProduct />
 			<Category />
-			<div className='grid grid-cols-3 grid-rows-3 gap-5 justify-items-center items-center mb-28'>
+			<div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center items-center mb-28'>
 				{isLoading ? (
 					skeleton
 				) : product?.length ? (

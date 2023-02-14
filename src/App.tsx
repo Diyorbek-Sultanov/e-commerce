@@ -1,6 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 
+import { Loader } from './components'
 import Layout from './layout/Layout'
 import Home from './pages/Home'
 
@@ -14,7 +15,7 @@ const App: React.FC = () => {
 				<Route
 					path='product-detail/:id'
 					element={
-						<React.Suspense fallback={<div>Loading...</div>}>
+						<React.Suspense fallback={<Loader />}>
 							<ProductDetail />
 						</React.Suspense>
 					}
