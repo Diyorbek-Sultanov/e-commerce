@@ -9,16 +9,16 @@ body {
 	font-family: 'Poppins', sans-serif;
 }
 
-.product:hover .product-card {
+/* .product:hover .product-card {
 	display: flex;
 }
 
 .product:hover .product-hide {
 	display: none;
-}
+} */
 
 .product-card {
-	display: none;
+	display: flex;
 	align-items: center;
 	column-gap: 15px;
 }
@@ -39,4 +39,21 @@ body {
 
 .sale {
 	background-image: url('./assets/bg-sale.jpg');
+}
+
+.swiper-pagination {
+	position: relative;
+}
+
+.swiper-pagination-bullet {
+	width: 19px;
+	height: 19px;
+}
+
+.swiper-pagination-bullet-active {
+	background-color: #eda415;
+}
+
+.testi {
+	border: 1px solid #bababa;
 }
