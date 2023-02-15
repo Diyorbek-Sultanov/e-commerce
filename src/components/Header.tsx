@@ -1,6 +1,7 @@
 import React from 'react'
 import { BiMap, BiUser } from 'react-icons/bi'
 import { TbTruck } from 'react-icons/tb'
+import { Link } from 'react-router-dom'
 import {
 	AiOutlineArrowDown,
 	AiOutlineHeart,
@@ -30,9 +31,9 @@ const Header: React.FC = () => {
 
 			<div className='flex flex-row justify-between items-center gap-x-10 bg-[#003F62] py-5 px-[65px] relative'>
 				<div className='flex flex-row items-center gap-x-9'>
-					<div>
+					<Link to='/'>
 						<img src={headerLogo} alt='header-logo' />
-					</div>
+					</Link>
 					<form>
 						<input
 							className='font-normal text-sm text-[#292D32] py-4 px-5 rounded-[20px] w-[370px]'

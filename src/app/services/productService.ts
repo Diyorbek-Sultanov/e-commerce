@@ -10,4 +10,10 @@ export const ProductService = {
 
 		return data
 	},
+
+	async getProductById(id: number) {
+		const { data } = await axios.get<IProduct>(`/products/${id}`)
+
+		return data
+	},
 }

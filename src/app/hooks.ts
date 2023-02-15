@@ -26,3 +26,18 @@ export const useProduct = () => {
 
 	return { isLoading, product }
 }
+
+export const useProdutById = (id: number) => {
+	const { data } = useQuery(
+		['ProductsById', id],
+		() => ProductService.getProductById(id),
+		{
+			onError: (error: any) => {
+				toast.error(error.message)
+			},
+			enabled: !!id,
+		},
+	)
+
+	return { data }
+}
