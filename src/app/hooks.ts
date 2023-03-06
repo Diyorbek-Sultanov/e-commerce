@@ -19,8 +19,9 @@ export const useProduct = () => {
 		onSuccess: data => {
 			dispatch(setProduct(data))
 		},
-		onError: (error: any) => {
-			toast.error(error.message)
+		onError: error => {
+			const er = error as Error
+			toast.error(er.message)
 		},
 	})
 
@@ -32,8 +33,9 @@ export const useProdutById = (id: number) => {
 		['ProductsById', id],
 		() => ProductService.getProductById(id),
 		{
-			onError: (error: any) => {
-				toast.error(error.message)
+			onError: error => {
+				const er = error as Error
+				toast.error(er.message)
 			},
 			enabled: !!id,
 		},

@@ -1,5 +1,6 @@
 import React from 'react'
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 
 import { useAppSelector, useAppDispatch } from '../app/hooks'
 import { setCategory } from '../store/slice/categorySlice'
@@ -19,12 +20,36 @@ const Category: React.FC = () => {
 		dispatch(setCategory(i))
 	}
 
+	const textAnimation = {
+		hidden: {
+			x: -100,
+			opacity: 0,
+		},
+		visibble: (custom: number) => ({
+			x: 0,
+			opacity: 1,
+			transition: { delay: custom * 0.3 },
+		}),
+	}
+
 	return (
-		<div className='flex flex-row items-center justify-between mb-12'>
-			<h1 className='text-[#1B5A7D] text-2xl font-semibold'>
+		<motion.div
+			initial='hidden'
+			whileInView='visibble'
+			className='flex flex-row items-center justify-between mb-12'
+		>
+			<motion.h1
+				variants={textAnimation}
+				custom={2}
+				className='text-[#1B5A7D] text-2xl font-semibold'
+			>
 				Popular products
-			</h1>
-			<ul className='flex flex-row gap-x-3'>
+			</motion.h1>
+			<motion.ul
+				custom={2}
+				variants={textAnimation}
+				className='flex flex-row gap-x-3'
+			>
 				{categories.map((item, i) => (
 					<li
 						className={clsx(
@@ -36,8 +61,8 @@ const Category: React.FC = () => {
 						{item}
 					</li>
 				))}
-			</ul>
-		</div>
+			</motion.ul>
+		</motion.div>
 	)
 }
 

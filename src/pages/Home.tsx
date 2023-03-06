@@ -1,4 +1,5 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 import { useProduct } from '../app/hooks'
 
@@ -6,7 +7,7 @@ import {
 	Category,
 	DisCount,
 	News,
-	Product,
+	MProduct,
 	Skeleton,
 	Slider,
 	SliderProduct,
@@ -22,20 +23,44 @@ const Home: React.FC = () => {
 
 	const skeleton = [...new Array(8)].map((_, i) => <Skeleton key={i} />)
 
+	const ProductAnimation = {
+		hidden: {
+			y: 100,
+			opacity: 0,
+		},
+		visibble: (custom: number) => ({
+			y: 0,
+			opacity: 1,
+			transition: { delay: custom * 0.1 },
+		}),
+	}
+
 	return (
 		<div className='h-full w-full mb-40'>
 			<Slider />
 			<SliderProduct />
 			<Category />
-			<div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center items-center mb-28'>
+			<motion.div
+				initial='hidden'
+				whileInView='visibble'
+				viewport={{ amount: 0.4 }}
+				className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center items-center mb-28'
+			>
 				{isLoading ? (
 					skeleton
 				) : product?.length ? (
-					product?.map((item, i) => <Product key={i} {...item} />)
+					product?.map((item, i) => (
+						<MProduct
+							custom={i + 1}
+							variants={ProductAnimation}
+							key={i}
+							{...item}
+						/>
+					))
 				) : (
 					<div>Elements Not Fount</div>
 				)}
-			</div>
+			</motion.div>
 			<DisCount />
 			<div className='flex flex-row justify-around rounded-[20px] py-11 bg-[#E2F4FF] mb-[75px]'>
 				<div className='flex flex-row'>
